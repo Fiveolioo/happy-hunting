@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import SignUp from './components/SignUp';
-import Login from './components/Login';
-import Logout from './components/Logout';
+//import Login from './components/Login';
+//import Logout from './components/Logout';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import Post from './components/Post';
-import PostCreate from './components/PostCreate';
-import MyPosts from './components/MyPosts';
+//import Post from './components/Post';
+//import PostCreate from './components/PostCreate';
+//import MyPosts from './components/MyPosts';
 
 
 class App extends Component {
@@ -24,11 +24,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={props => <Home{...props}/>} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/posts/:postId" render={props => <Post{...props} posts={this.props.posts}/>} />
-            <Route exact path="/createPost" component={PostCreate}/>    
-            <Route exact path="/myposts" component={MyPosts}/>    
-            <Route exact path="/logout" component={Logout}/>    
             
             <Logout />
           </Switch>
