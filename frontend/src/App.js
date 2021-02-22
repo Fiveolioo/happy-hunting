@@ -1,19 +1,41 @@
-import react from 'react'
+import React, { Component } from 'react'
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import Logout from './components/Logout';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import Post from './components/Post';
+import PostCreate from './components/PostCreate';
+import MyPosts from './components/MyPosts';
 
 
-class App extends React.Component {
+class App extends Component {
+
+  componentDidMount() {
+    this.props.Posts()
+  }
+
+
   render() {
-    return(
-      <div>
-        <Router>
-          <div className='App'>
-            <Switch>
-              <Route exact path='/' render={props => <Home{...props}/>} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    )
+    return (
+        <div className="main-page">
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" render={props => <Home{...props}/>} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/posts/:postId" render={props => <Post{...props} posts={this.props.posts}/>} />
+            <Route exact path="/createPost" component={PostCreate}/>    
+            <Route exact path="/myposts" component={MyPosts}/>    
+            <Route exact path="/logout" component={Logout}/>    
+            
+            <Logout />
+          </Switch>
+        </div>
+      </Router>
+        </div>
+    );
   }
 }
 
