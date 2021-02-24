@@ -11,7 +11,6 @@ import Posts from './reducers/Posts';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { PersistGate } from 'redux-persist/integration/react';
-import userPosts from './reducers/NewPost.js';
 import myPosts from './reducers/MyPosts';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -24,7 +23,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
     currentUser: SignUpForm,
     posts: Posts,
-    userPosts,
     myPosts
 });
 
