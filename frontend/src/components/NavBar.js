@@ -21,7 +21,7 @@ function Navbar({ currentUser }) {
                             <Link className="nav-link" to="/createPost">Create a Post~</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <CarMakes/>
+                            <CarMakes />
                         </li>
 
                     </ul>
