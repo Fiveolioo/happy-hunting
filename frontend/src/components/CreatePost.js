@@ -31,7 +31,7 @@ class CreatePost extends Component {
 
     handleSelect = (e) => {
         this.setState({
-            category_id: parseInt(document.querySelector('#category_id').value)
+            carmake_id: parseInt(document.querySelector('#carmake_id').value)
         })
     }
 
@@ -50,10 +50,9 @@ class CreatePost extends Component {
         formData.append('[post]description', this.state.description)
         formData.append('[post]price', this.state.price)
         formData.append('[post]user_id', this.state.user_id)
-        formData.append('[post]category_id', this.state.category_id)
+        formData.append('[post]carmake_id', this.state.carmake_id)
         formData.append("[post]image", this.state.images)
         this.props.addItem(formData)
-        // this.props.history.push('/myposts')
     }
 
 
@@ -75,17 +74,51 @@ class CreatePost extends Component {
                                 <input class="form-control" onChange={this.handleChange} placeholder="Price" type="text" name="price" /><br />
                                 <label htmlFor="images"><h5>Upload images:</h5></label>
                                 <input class="form-control-file" onChange={this.handleImages} type="file" name="images" accept="image/*" ></input><br />
-                                <select class="form-control" onChange={this.handleSelect} id="category_id">
+                                <select class="form-control" onChange={this.handleSelect} id="carmake_id">
                                     <option value="" selected disabled hidden>Choose here</option>
-                                    <option value='1'>Electronics</option>
-                                    <option value='2'>Hobbies</option>
-                                    <option value='3'>Home & Garden</option>
-                                    <option value='4'>Vehicles</option>
-                                    <option value='5'>Clothing & Accessories</option>
-                                    <option value='6'>Rentals</option>
-                                    <option value='7'>Family</option>
-                                    <option value='8'>Entertainment</option>
-                                    <option value='9'>Deals</option>
+                                    <option value="1">Acura</option>
+                                    <option value="2">Alfa Romeo</option>
+                                    <option value="3">Aston Martin</option>
+                                    <option value="4">Audi</option>
+                                    <option value="5">Bentley</option>
+                                    <option value="6">BMW</option>
+                                    <option value="7">Bugatti</option>
+                                    <option value="8">Buick</option>
+                                    <option value="9">Cadillac</option>
+                                    <option value="10">Caterham</option>
+                                    <option value="12">Chevrolet</option>
+                                    <option value="13">Chrysler</option>
+                                    <option value="14">Dodge</option>
+                                    <option value="15">Ferrari</option>
+                                    <option value="16">Fiat</option>
+                                    <option value="17">Ford</option>
+                                    <option value="18">GMC</option>
+                                    <option value="19">Honda</option>
+                                    <option value="20">Hyundai</option>
+                                    <option value="21">Infiniti</option>
+                                    <option value="22">Jaguar</option>
+                                    <option value="23">Jeep</option>
+                                    <option value="24">Kia</option>
+                                    <option value="25">Lamborghini</option>
+                                    <option value="26">Land Rover</option>
+                                    <option value="27">Lexus</option>
+                                    <option value="28">Lincoln</option>
+                                    <option value="29">Lotus</option>
+                                    <option value="30">Maserati</option>
+                                    <option value="31">Mazda</option>
+                                    <option value="32">Mercedes Benz</option>
+                                    <option value="33">Mini</option>
+                                    <option value="34">Mitsubishi</option>
+                                    <option value="35">Nissan</option>
+                                    <option value="36">Porsche</option>
+                                    <option value="37">Ram Trucks</option>
+                                    <option value="38">Rolls Royce</option>
+                                    <option value="39">Smart</option>
+                                    <option value="40">Subaru</option>
+                                    <option value="41">Toyota</option>
+                                    <option value="42">Tesla</option>
+                                    <option value="43">Volkswagen</option>
+                                    <option value="44">Volvo</option>
                                 </select><br />
                                 <input class="btn btn-primary btn-lg btn-block" type="submit" value="SUBMIT" />
                             </form>
@@ -113,3 +146,4 @@ const mdtp = (dispatch,ownProps) => {
    };
    
 export default connect(mstp, mdtp)(withRouter(CreatePost))
+
