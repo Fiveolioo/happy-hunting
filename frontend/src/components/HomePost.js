@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
-import '../style/style.css'
+
 
 export default class HomePost extends Component {
 
