@@ -7,7 +7,7 @@ function Navbar({ currentUser }) {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-                <Link className="navbar-brand" to="/">HAPPY HUNTING</Link>
+                <Link className="navbar-brand" to="/">~HAPPY HUNTING~</Link>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">

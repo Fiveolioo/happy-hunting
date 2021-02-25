@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
-  resources :categories
+  resources :carmakes
   resources :users, only:[:create,:show, :index]
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
