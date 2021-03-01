@@ -14,6 +14,7 @@ class Home extends Component {
     render() {
         return (
             <div>
+                {!this.props.currentUser.logged_in ? this.props.history.push('/login') : null}
                 <Navbar />
                 {this.props.posts.length > 0 ? <Posts posts={this.props.posts} /> : null}
             </div>
@@ -21,10 +22,11 @@ class Home extends Component {
     }
 }
 
-const mstp = (state) => {
+const mapStateToProps = (state) => {
     return {
-        posts: state.posts
+        posts: state.posts,
+        currentUser: state.currentUser
     }
 }
 
-export default connect(mstp,{postsAction})(Home)
+export default connect(mapStateToProps,{postsAction})(Home)

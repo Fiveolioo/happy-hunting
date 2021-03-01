@@ -105,10 +105,10 @@ class Login extends Component {
   }
 }
 
-const mstp = (state) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser[0]
+    currentUser: state.currentUser
   }
 }
 
-export default connect(mstp, { signup })(Login)
+export default connect(mapStateToProps, { signup })(Login)

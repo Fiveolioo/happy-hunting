@@ -135,10 +135,10 @@ class SignUp extends React.Component {
       }
     }
     
-    const mstp = (state) => {
+    const mapStateToProps = (state) => {
       return {
-        currentUser: state.currentUser[0]
+        currentUser: state.currentUser
       }
     }
     
-    export default connect(mstp, { signup })(SignUp)
+    export default connect(mapStateToProps, { signup })(SignUp)

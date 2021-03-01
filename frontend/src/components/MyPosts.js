@@ -23,11 +23,11 @@ class MyPosts extends Component {
     }
 }
 
-const mstp = state => (
+const mapStateToProps = state => (
     {
         userPosts: state.myPosts,
-        currentUser:state.currentUser[0]
+        currentUser:state.currentUser
     }
 )
 
-export default connect(mstp, {myPosts})(MyPosts)
+export default connect(mapStateToProps, {myPosts})(MyPosts)

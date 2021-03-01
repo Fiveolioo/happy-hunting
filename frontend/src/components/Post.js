@@ -35,7 +35,7 @@ class Post extends Component {
 
     render() {
         const { post, loggedIn, currentUser } = this.props
-        return (
+        return post && (
             <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
                 <div>
                     <img className="card-img-top" src={post.image ? post.image.url : ""} alt="Post image"></img>
@@ -82,11 +82,11 @@ class Post extends Component {
     }
 }
 
-const mstp = (state) => {
+const mapStateToProps = (state) => {
     return {
-        currentUser: state.currentUser[0].user,
-        loggedIn: state.currentUser[0].logged_in
+        currentUser: state.currentUser.user,
+        loggedIn: state.currentUser.logged_in
     }
 }
 
-export default connect(mstp, { DeletePosts })(Post)
+export default connect(mapStateToProps, { DeletePosts })(Post)

@@ -28,13 +28,13 @@ function Navbar({ currentUser }) {
 
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            {!currentUser[0].logged_in ? <Link className="nav-link" to="/login">Login</Link> : null}
+                            {!currentUser.logged_in ? <Link className="nav-link" to="/login">Login</Link> : null}
                         </li>
                         <li className="nav-item">
-                            {!currentUser[0].logged_in ? <Link className="nav-link" to="/signup">Signup</Link> : null}
+                            {!currentUser.logged_in ? <Link className="nav-link" to="/signup">Signup</Link> : null}
                         </li>
                         <li className="nav-item">
-                            {currentUser[0].logged_in ? <Link className="nav-link" to="/logout">Logout</Link> : null}
+                            {currentUser.logged_in ? <Link className="nav-link" to="/logout">Logout</Link> : null}
                         </li>
                         
                     </ul>
@@ -44,9 +44,9 @@ function Navbar({ currentUser }) {
     )
 }
 
-const mstp = state => {
+const mapStateToProps = state => {
     return {
         currentUser: state.currentUser
     }
 }
-export default connect(mstp)(Navbar)
+export default connect(mapStateToProps)(Navbar)

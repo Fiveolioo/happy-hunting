@@ -1,7 +1,7 @@
 export default function(state=[], action) {
     switch (action.type) {
         case "MY-POSTS":
-            return [action.data]
+            return action.data
         case "ADD-NEW-POST":
             return [...state, action.post]
         case 'EDIT-POST':

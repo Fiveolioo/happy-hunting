@@ -42,7 +42,7 @@ class App extends Component {
   }
 }
 
-const mstp = (state) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.currentUser,
     posts:state.posts
@@ -50,4 +50,4 @@ const mstp = (state) => {
 }
 
 
-export default connect(mstp, { signup, Posts})(App);
+export default connect(mapStateToProps, { signup, Posts})(App);

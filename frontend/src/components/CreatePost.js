@@ -15,9 +15,9 @@ class CreatePost extends Component {
             title: '',
             description: '',
             price: '',
-            user_id: '',
-            category_id: '',
-            images: ''
+            user_id: null,
+            carmake_id: null,
+            image: ''
         }
     }
 
@@ -35,11 +35,11 @@ class CreatePost extends Component {
         })
     }
 
-    handleImages = event => {
+    handleImage = event => {
         const formData = new FormData();
-        formData.append('images', event.target.files[0])
+        formData.append('image', event.target.files[0])
         this.setState({
-            images: event.target.files[0]
+            image: event.target.files[0]
         })
     }
 
@@ -49,10 +49,19 @@ class CreatePost extends Component {
         formData.append('[post]title', this.state.title)
         formData.append('[post]description', this.state.description)
         formData.append('[post]price', this.state.price)
-        formData.append('[post]user_id', this.state.user_id)
-        formData.append('[post]carmake_id', this.state.carmake_id)
-        formData.append("[post]image", this.state.images)
+        formData.append('[post]user_id', parseInt(this.state.user_id))
+        formData.append('[post]carmake_id', parseInt(this.state.carmake_id))
+        formData.append("[post]image", this.state.image)
+        // const formData = {
+        //     ['[post]title']: this.state.title,
+        //     ['[post]description']: this.state.description,
+        //     ['[post]price']: this.state.price,
+        //     ['[post]user_id']: this.state.user_id,
+        //     ['[post]carmake_id']: this.state.carmake_id,
+        //     ['[post]image']: this.state.image,
+        // }
         this.props.addItem(formData)
+        // this.props.addItem(this.state)
     }
 
 
@@ -72,8 +81,8 @@ class CreatePost extends Component {
                                 <input class="form-control" onChange={this.handleChange} placeholder="Title" type="text" name="title" /><br />
                                 <textarea class="form-control" onChange={this.handleChange} placeholder="Description" name="description" id="" cols="30" rows="10"></textarea><br />
                                 <input class="form-control" onChange={this.handleChange} placeholder="Price" type="text" name="price" /><br />
-                                <label htmlFor="images"><h5>Upload images:</h5></label>
-                                <input class="form-control-file" onChange={this.handleImages} type="file" name="images" accept="image/*" ></input><br />
+                                <label htmlFor="image"><h5>Upload image:</h5></label>
+                                <input class="form-control-file" onChange={this.handleImage} type="file" name="image" accept="image/*" ></input><br />
                                 <select class="form-control" onChange={this.handleSelect} id="carmake_id">
                                     <option value="" selected disabled hidden>Choose here</option>
                                     <option value="1">Acura</option>
@@ -131,13 +140,13 @@ class CreatePost extends Component {
     }
 }
 
-const mstp = (state) => {
+const mapStateToProps = (state) => {
     return {
-        currentUser: state.currentUser[0]
+        currentUser: state.currentUser
     }
 }
 
-const mdtp = (dispatch,ownProps) => {
+const mapDispatchToProps = (dispatch,ownProps) => {
     return {
       addItem: (post) => {
         dispatch(newPost(post,ownProps))
@@ -145,5 +154,5 @@ const mdtp = (dispatch,ownProps) => {
     };
    };
    
-export default connect(mstp, mdtp)(withRouter(CreatePost))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CreatePost))
 

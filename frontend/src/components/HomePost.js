@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 
 
@@ -18,7 +17,7 @@ export default class HomePost extends Component {
     }
     render() {
         return (
-            <div className={this.props.post.category_id}>
+            <div className={this.props.post.carmake_id}>
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
                     <div>
                         <img className="card-img-top" src={this.props.post.image ? this.props.post.image.url : ""} alt="Post image"></img>
