@@ -5,8 +5,9 @@ class PostsController < ApplicationController
     end
 
     def create
+        puts "CURRENT PARAMS #{params}"
         post=Post.new(post_params)
-        
+
         if post.save
             render json: post
         else
