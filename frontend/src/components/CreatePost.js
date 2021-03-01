@@ -52,16 +52,7 @@ class CreatePost extends Component {
         formData.append('[post]user_id', parseInt(this.state.user_id))
         formData.append('[post]carmake_id', parseInt(this.state.carmake_id))
         formData.append("[post]image", this.state.image)
-        // const formData = {
-        //     ['[post]title']: this.state.title,
-        //     ['[post]description']: this.state.description,
-        //     ['[post]price']: this.state.price,
-        //     ['[post]user_id']: this.state.user_id,
-        //     ['[post]carmake_id']: this.state.carmake_id,
-        //     ['[post]image']: this.state.image,
-        // }
         this.props.addItem(formData)
-        // this.props.addItem(this.state)
     }
 
 

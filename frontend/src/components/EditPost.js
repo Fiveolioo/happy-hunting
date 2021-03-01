@@ -48,8 +48,11 @@ class EditPost extends Component {
         formData.append('[post]price', this.state.price)
         formData.append('[post]user_id', this.state.user_id)
         formData.append('[post]carmake_id', this.state.carmake_id)
-        formData.append("[post]image", this.state.images)
-        this.props.UpdatePost(formData)
+        // formData.append("[post]image", this.state.images)
+        if (this.state.images !== '') {
+            formData.append("[post]image", this.state.images)
+        }
+        this.props.UpdatePost(formData, this.state.id)
         this.props.closeModal()
     }
 
@@ -123,7 +126,7 @@ class EditPost extends Component {
 
 const mstp = (state) => {
     return {
-        currentUser: state.currentUser[0]
+        currentUser: state.currentUser
     }
 }
 export default connect(mstp, { UpdatePost })(EditPost)

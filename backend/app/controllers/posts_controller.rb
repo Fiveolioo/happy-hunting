@@ -5,20 +5,24 @@ class PostsController < ApplicationController
     end
 
     def create
-        puts "CURRENT PARAMS #{params}"
         post=Post.new(post_params)
 
         if post.save
             render json: post
         else
+            puts "Create Post error: #{post.errors.full_messages}"
             render json:{error:'INVALID'}
         end
     end
 
     def update
         post=Post.find(params[:post][:id])
-        post.update(post_params)
-        render json: post
+        if post.update(post_params)
+            render json: post
+        else
+            puts "Edit Post error: #{post.errors.full_messages}"
+            render json:{error:'INVALID'}
+        end
     end
 
     def destroy
