@@ -48,7 +48,6 @@ class EditPost extends Component {
         formData.append('[post]price', this.state.price)
         formData.append('[post]user_id', this.state.user_id)
         formData.append('[post]carmake_id', this.state.carmake_id)
-        // formData.append("[post]image", this.state.images)
         if (this.state.images !== '') {
             formData.append("[post]image", this.state.images)
         }
