@@ -1,5 +1,4 @@
 export default function(id){
-    console.log('are you even hitting')
     return (dispatch)=>{
         fetch(`http://localhost:3001/carmakes/${id}`,{
             credentials: 'include'
