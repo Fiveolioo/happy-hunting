@@ -1,4 +1,4 @@
-export default ()=>{
+export default (id)=>{
     return dispatch=>{
         return fetch(`http://localhost:3001/myposts`, {
             credentials: 'include'})

@@ -1,24 +1,28 @@
-# README
+# Happy Hunting
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Happy Hunting, a great place to see car listings in your local area to buy/sell!
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+1. Open up a terminal and type "cd backend"
+2. Run 'rails db:migrate' and 'rails db:seed' to create the database & seed data
+3. Run 'rails s' to start the rails server
+4. Open a new terminal and type in "cd frontend" then "npm start"
+5. Begin by signing up for an account or logging in with an existing account
+6. Create a post listing with a car you want to sell or browse any cars!
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+Run "Bundle Install"/"npx install"
 
-* Database creation
+## Contributing
 
-* Database initialization
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-* How to run the test suite
+## Authors
 
-* Services (job queues, cache servers, search engines, etc.)
+Richard Cho
 
-* Deployment instructions
+## License
 
-* ...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

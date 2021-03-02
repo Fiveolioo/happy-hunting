@@ -9,7 +9,8 @@ export default function(state=[], action) {
             return [...newState, action.post]
         case "DELETE-POST":
             return [...state.filter(i => i.id !== action.data.id)]
-        
+        case "RESET-MY-POSTS":
+            return []
         default:
             return state
     }

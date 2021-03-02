@@ -35,20 +35,12 @@ class SignUp extends React.Component {
           },
           body: JSON.stringify({ user: this.state })
         }).then(res => res.json())
-          .then(user => {
-            this.props.signup(user)
-          })
-          .then(() => {
-            if (this.props.currentUser.logged_in) {
-              this.props.history.push('/')
-            }
-            else {
-              this.setState({
-                errors: this.props.currentUser.errors
-              })
-              document.getElementById("errors").className += " alert alert-danger";
-            }
-          })
+        .then(() => {
+          this.props.history.push('/login')
+        }).catch(err => {
+          console.log('Sign Up Error', err)
+          document.getElementById("errors").className += " alert alert-danger";
+        })
       }
     
       componentDidMount() {
