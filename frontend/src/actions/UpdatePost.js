@@ -1,4 +1,3 @@
-
 export default function(post, id){
     console.log('POST IN UPDATE?', post)
     console.log('ID', id)

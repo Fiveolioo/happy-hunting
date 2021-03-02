@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
 import myPosts from '../actions/MyPosts';
 import Post from './Post';
 import Navbar from './Navbar';

@@ -22,7 +22,7 @@ export default class HomePost extends Component {
                     <div>
                         <img className="card-img-top" src={this.props.post.image ? this.props.post.image.url : ""} alt="Post image"></img>
                         <div className="card-body">
-                            <h3 className="card-title">Title: {this.props.post.title}</h3>
+                            <h3 className="card-title">{this.props.post.title}</h3>
                             <h5 >Price: ${this.props.post.price}</h5>
                             <button className="btn btn-info btn-block" onClick={this.handleClick}>Description</button>
                         </div>

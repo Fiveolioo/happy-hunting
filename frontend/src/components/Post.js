@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 import EditPost from './EditPost';
 import { Button, Modal } from "react-bootstrap";
 import DeletePosts from '../actions/DeletePosts';
 import { connect } from 'react-redux';
+import '../style/style.css'
 
 class Post extends Component {
 
@@ -40,16 +40,16 @@ class Post extends Component {
                 <div>
                     <img className="card-img-top" src={post.image ? post.image.url : ""} alt="Post image"></img>
                     <div className="card-body">
-                        <h3 className="card-title"> {post.title}</h3>
-                        <h5 > {post.price}</h5>
+                        <h3 className="card-title">Title: {post.title}</h3>
+                        <h5>Price: ${post.price}</h5>
                         <button className="btn btn-info btn-block" onClick={this.handleClick}>Description</button>
                         <button className="btn btn-danger btn-block" onClick={this.handleDelete}>Delete Post</button>
                     </div>
                 </div>
                 <div>
-                    <h3 class="card-header hah" style={{ background: "burlywood" }}>{post.title}</h3>
+                    <h3 class="card-header hah" style={{ background: "burlywood" }}>Title: {post.title}</h3>
                     <div className="card-body" style={{ background: " #fff9e6" }}>
-                        <h3> {post.price} </h3>
+                        <h3>Price: ${post.price} </h3>
                         <p className="card-text">{post.description}</p>
                         {loggedIn?(<ul class="list-group list-group-flush">
                             <li class="list-group-item">{currentUser.email}</li>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import Posts from '../reducers/Posts';
 import newPost from '../actions/NewPost';
-
 import Navbar from './Navbar';
 import { withRouter } from "react-router-dom"
 
@@ -72,10 +70,10 @@ class CreatePost extends Component {
                                 <input class="form-control" onChange={this.handleChange} placeholder="Title" type="text" name="title" /><br />
                                 <textarea class="form-control" onChange={this.handleChange} placeholder="Description" name="description" id="" cols="30" rows="10"></textarea><br />
                                 <input class="form-control" onChange={this.handleChange} placeholder="Price" type="text" name="price" /><br />
-                                <label htmlFor="image"><h5>Upload image:</h5></label>
+                                <label htmlFor="image"><h4>Upload image:</h4></label>
                                 <input class="form-control-file" onChange={this.handleImage} type="file" name="image" accept="image/*" ></input><br />
                                 <select class="form-control" onChange={this.handleSelect} id="carmake_id">
-                                    <option value="" selected disabled hidden>Choose here</option>
+                                    <option value="" selected disabled hidden>Choose your car make</option>
                                     <option value="1">Acura</option>
                                     <option value="2">Alfa Romeo</option>
                                     <option value="3">Aston Martin</option>

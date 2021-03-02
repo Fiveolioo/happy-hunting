@@ -1,4 +1,3 @@
-
 export default function (post){
     return dispatch => {
         fetch(`http://localhost:3001/posts/${post.id}`, {

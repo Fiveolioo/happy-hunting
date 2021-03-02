@@ -1,5 +1,3 @@
-import { push } from 'react-router-redux';
-
 export default function (post,ownProps) {
     return (dispatch) => {
         fetch('http://localhost:3001/posts', {
